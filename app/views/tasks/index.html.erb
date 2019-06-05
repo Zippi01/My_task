@@ -1,2 +1,5 @@
-<!-- <h2>My Tasks</h2>
-<%# <%= render partial: 'task', collection: @tasks, as: :task %> --> %>
+ <h2>My Tasks</h2>
+ <ul class="list-group">
+   <%= render partial: 'task', collection: @tasks, as: :task %>
+</ul>
+   <%= link_to 'Create', new_task_path, class: 'btn btn-success' %>

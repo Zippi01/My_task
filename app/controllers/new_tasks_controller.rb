@@ -1,2 +1,0 @@
-class NewTasksController < ApplicationController
-end
