@@ -1,11 +1,9 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
-<form>
-  <div class="container">
-    <div class="col-xs-3 col-centered">
-
-       <h2>Sign up</h2>
-
+<div class="container">
+    <form>
+      <div class="col-md-3 col-md-offset-4" align="center">
+        <h2>Sign up</h2>
             <div class="form-group">
               <%= f.label :email %><br>
               <%= f.email_field :email, autofocus: true, class: "form-control",placeholder: "name@example.com", autocomplete: "email" %>
@@ -31,6 +29,5 @@
 
           <%= render "devise/shared/links" %>
         </div>
-      </div>
-
-</form>
+    </form>
+</div>

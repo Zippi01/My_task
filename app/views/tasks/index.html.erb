@@ -1,9 +1,9 @@
-<div style="margin-right: 45px; margin-top: 30px;">
+<div style="margin-right: 20px; margin-top: 15px;">
    <%= link_to 'Create', new_task_path, class: 'btn btn-success pull-right col-xs-1 ' %>
 </div>
 <div class="container">
   <h2 align="center" >My Tasks</h2>
-    <ul class="list-group">
+    <ul class="list-group", white-space="normal" >
       <%= render partial: 'task', collection: @tasks, as: :task %>
     </ul>
 </div>
