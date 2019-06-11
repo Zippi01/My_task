@@ -1,6 +1,6 @@
 <div class="container">
   <h2 align="center">Create a new task</h2>
-  <%= simple_form_for @task do |f| %>
+  <%= simple_form_for @task, remote: true do |f| %>
     <%= f.input :name%>
     <%= f.input :descripion, input_html:{ rows: "10"} %>
     <%= f.button :submit, class: 'btn btn-success'%>

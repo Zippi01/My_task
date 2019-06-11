@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:update, :destroy, :edit]
 
   def index
-    @tasks = Task.all
+    @active_tasks = Task.where(active: true)
+    @done_tasks = Task.where(active: false)
   end
 
   def new; end
@@ -18,18 +19,22 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-
-    redirect_to tasks_url
+    respond_to do |format|
+      format.js
+      format.html { redirect_to tasks_url }
+    end
   end
 
   def edit
   end
 
   def update
-    if @task.update(task_params)
-      redirect_to(tasks_path)
-    else
-      render(:edit)
+    @task.update(task_params)
+    respond_to do |format|
+      format.js
+      format.html do
+        @task.valid? ? redirect_to(tasks_path) : render(:edit)
+      end
     end
   end
 

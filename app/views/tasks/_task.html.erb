@@ -1,14 +1,17 @@
-<li class="list-group-item">
+<li id="task_<%= task.id %>" class="list-group-item">
   <p>
-  <b>Name:</b><br>
+    <b>Name:</b><br>
     <%= task.name %>
   </p>
   <p>
   <b>Description:</b><br>
     <%= task.descripion %>
   </p>
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <%= link_to 'Edit', edit_task_path(task), class: 'btn btn-primary' %>
-    <%= link_to 'Delete', task, method: :delete, class: 'btn btn-danger' %>
+  <div class="pjax-container">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <%= link_to 'Edit', edit_task_path(task), class: 'btn btn-primary' %>
+      <%= link_to("Mark is #{task.active ? 'Done' : 'Active'}", task_path(id: task, task: {active: !task.active}), remote: true, method: :put, class: 'btn btn-success') %>
+      <%= link_to 'Delete', task, remote: true, method: :delete,  class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
+    </div>
   </div>
 </li>

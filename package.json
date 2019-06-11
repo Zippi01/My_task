@@ -1,5 +1,7 @@
 {
   "name": "projects",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery-pjax": "^2.0.1"
+  }
 }
