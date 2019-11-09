@@ -1,0 +1,28 @@
+<div style="margin-right: 20px; margin-top: 15px;">
+  <%= link_to 'Cancel', url_for(:back), class: 'btn btn-danger pull-right col-xs-1 ' %><br>
+</div>
+<div class="container">
+  <form><br>
+    <div class="col-md-3">
+      <!-- <div class="form-group">
+        <label>Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" >
+      </div> -->
+      <div class="form-group">
+        <label>New password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="form-group">
+        <label>Confirm new password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" >
+      </div>
+      <button type="submit" class="btn btn-primary">Update password</button>
+    </div>
+  </form>
+</div>
+<!-- <div class="container">
+  <h4>Done task</h4>
+  <ul id="done-task-list" class="list-group">
+    <%# <%= render partial: 'task', collection: @done_tasks, as: :task %> %>
+  </ul>
+</div> -->
